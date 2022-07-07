@@ -1,16 +1,17 @@
+import "./LandingPage.css"
+
 import { useQuery } from "@apollo/client"
 import { Contract } from "@ethersproject/contracts"
 import { useCall } from "@usedapp/core"
 import React, { useEffect, useState } from "react"
 
-import { Body, Container, Header, Image, Link } from "./components"
-import logo from "./ethereumLogo.png"
-import WalletButton from "./components/WalletButton/WalletButton"
+import { Body, Container, Header, Image, Link } from "../../components"
+import WalletButton from "../../components/WalletButton/WalletButton"
 
 import { addresses, abis } from "@my-app/contracts"
-import GET_TRANSFERS from "./graphql/subgraph"
+import GET_TRANSFERS from "../../graphql/subgraph"
 
-function App() {
+function LandingPage() {
     const { error: contractCallError, value: tokenBalance } =
         useCall({
             contract: new Contract(addresses.ceaErc20, abis.erc20),
@@ -39,19 +40,16 @@ function App() {
                 <WalletButton />
             </Header>
             <Body>
-                <Image src={logo} alt="ethereum-logo" />
-                <p>
-                    Edit <code>packages/react-app/src/App.js</code> and save to
-                    reload.
-                </p>
-                <Link href="https://reactjs.org">Learn React</Link>
-                <Link href="https://usedapp.io/">Learn useDapp</Link>
-                <Link href="https://thegraph.com/docs/quick-start">
-                    Learn The Graph
-                </Link>
+                <div className="SplashText">
+                    <h1 style={{ fontSize: 130, margin: 0 }}>23,534</h1>
+                    <h3 style={{ width: "50%" }}>
+                        Estimated tonnes of CO2 removed from our atmosphere from
+                        registered projects
+                    </h3>
+                </div>
             </Body>
         </Container>
     )
 }
 
-export default App
+export default LandingPage
