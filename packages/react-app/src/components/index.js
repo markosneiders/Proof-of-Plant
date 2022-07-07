@@ -14,8 +14,9 @@ export const Button = styled.button`
     background-color: white;
     border: none;
     border-radius: 8px;
-    color: #fff;
-    background-color: #4da167;
+    color: #23ce6b;
+    font-weight: 600;
+    background-color: #fff;
     cursor: pointer;
     font-size: 16px;
     margin: 0px 20px;
@@ -24,12 +25,12 @@ export const Button = styled.button`
     text-decoration: none;
     transition: 0.3s;
     &:hover {
-        background-color: #23ce6b;
+        transform: scale(1.1);
     }
 `
 
 export const Container = styled.div`
-    background-color: #23ce6b;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     height: calc(100vh);
@@ -37,12 +38,13 @@ export const Container = styled.div`
 
 export const Header = styled.header`
     align-items: center;
-    background-color: #fff;
+    background-color: #23ce6b;
     color: white;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    min-height: 70px;
+    justify-content: space-between;
+    height: 70px;
+    padding: 8px;
 `
 
 export const Image = styled.img`

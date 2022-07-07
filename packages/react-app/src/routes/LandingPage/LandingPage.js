@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react"
 
 import { Body, Container, Header, Image, Link } from "../../components"
 import WalletButton from "../../components/WalletButton/WalletButton"
+import logo from "../../assets/POP_logo_inverted.png"
 
 import { addresses, abis } from "@my-app/contracts"
 import GET_TRANSFERS from "../../graphql/subgraph"
@@ -37,6 +38,7 @@ function LandingPage() {
     return (
         <Container>
             <Header>
+                <img src={logo} height={50} alt="POP logo" />
                 <WalletButton />
             </Header>
             <Body>
